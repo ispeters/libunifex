@@ -1,5 +1,5 @@
 /*
- * Copyright 2019-present Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ struct _fn {
   template <typename Exception>
   [[noreturn]] UNIFEX_ALWAYS_INLINE
   void operator()([[maybe_unused]] Exception&& ex) const {
-  #if __cpp_exceptions
+  #if !UNIFEX_NO_EXCEPTIONS
     throw (Exception&&) ex;
   #else
     std::terminate();
