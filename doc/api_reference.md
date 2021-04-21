@@ -951,7 +951,7 @@ namespace unifex
     //
     // cleanup is thread-safe and idempotent (i.e. it can be invoked multiple
     // times in series or in parallel).
-    [[nodiscard]] sender cleanup() noexcept;
+    [[nodiscard]] sender auto cleanup() noexcept;
 
     // Connects sender to an internal receiver and starts the operation.  Once
     // started, the given sender must complete with void or done; completing
